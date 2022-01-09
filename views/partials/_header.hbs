@@ -1,0 +1,68 @@
+<div id="countdown-banner">
+    <div class="sale-name">Winners announced live in:</div>
+
+    <div id="countdown-timer">
+    <div class="unit"><div class="digits" id="days"></div><div class="label">Days</div></div>
+    <div class="sep">:</div>
+    <div class="unit"><div class="digits" id="hours"></div><div class="label">Hours</div></div>
+    <div class="sep">:</div>
+    <div class="unit"><div class="digits" id="mins"></div><div class="label">M</div></div>
+    <div class="sep">:</div>
+    <div class="unit"><div class="digits" id="secs"></div><div class="label">S</div></div>
+    <div id="end"></div>
+    </div>
+</div>
+<nav class="grey darken-3">
+    <div class="nav-wrapper container">
+
+        <a href="#!" class="brand-logo center">Tritone</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i class="fas fa-bars"></i></a>
+        <ul class="sidenav" id="mobile-demo">
+            {{!-- <li><a href="/stories">Spin The Wheel</a></li>
+            <li><a href="/shop">Shop</a></li> --}}
+            <li><a href="/prizes">Prizes</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/auth/logout">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<script>
+    var countDownDate = new Date("Aug 31, 2021 23:59:59 GMT-0800 (Pacific Standard Time)").getTime();
+    // var countDownDate = moment.tz("2020-02-13 23:59:59", "America/Los_Angeles")
+    // var countDownDate = saleEnds.toDate().getTime();
+    
+
+    // Run myfunc every second
+    var myfunc = setInterval(function() {
+
+    var now = new Date().getTime();
+    // var now = moment.tz(moment.now, moment.tz.guess());
+    // now = now.toDate().getTime();
+      
+    var timeleft = countDownDate - now;
+        
+    // Calculating the days, hours, minutes and seconds left
+    var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+        
+    // Result is output to the specific element
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("mins").innerHTML = minutes; 
+    document.getElementById("secs").innerHTML = seconds;
+        
+    // Display the message when countdown is over
+    if (timeleft < 0) {
+        clearInterval(myfunc);
+        document.getElementById("days").innerHTML = ""
+        document.getElementById("hours").innerHTML = "" 
+        document.getElementById("mins").innerHTML = ""
+        document.getElementById("secs").innerHTML = ""
+        document.getElementById("end").innerHTML = "TIME UP!!";
+    }
+    }, 1000);
+</script>

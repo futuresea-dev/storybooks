@@ -1,0 +1,377 @@
+p {
+  margin: 10px 0 !important;
+}
+
+.login-container {
+  width: 400px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.fa-small {
+  font-size: 16px !important;
+}
+
+.btn-float {
+  float: left;
+  margin-right: 10px;
+}
+
+.img-small {
+  width: 180px;
+}
+
+
+html,
+body,
+.background {
+  margin: 0;
+  width: 100%;
+  height: auto;
+  text-align:center
+}
+
+.background {
+  background:#7289DA;
+}
+@font-face {
+  font-family: Whitney;
+  font-style: light;
+  font-weight: 300;
+  src: url(https://discordapp.com/assets/16801bfdf51ed88e69bc90626a3ea436.woff) format('woff')
+}
+
+@font-face {
+  font-family: Whitney;
+  font-style: normal;
+  font-weight: 500;
+  src: url(https://discordapp.com/assets/d153359b5d87601d2b9c708b7ae2db02.woff) format('woff')
+}
+
+@font-face {
+  font-family: Whitney;
+  font-style: medium;
+  font-weight: 600;
+  src: url(https://discordapp.com/assets/a934ab008c7f6a2274ec441f6be0696a.woff) format('woff')
+}
+
+@font-face {
+  font-family: Whitney;
+  font-style: semibold;
+  font-weight: 650;
+  src: url(https://discordapp.com/assets/877ef48bf9fcfee590f0ba64de101b59.woff) format('woff')
+}
+
+@font-face {
+  font-family: Whitney;
+  font-style: bold;
+  font-weight: 700;
+  src: url(https://discordapp.com/assets/2e004dd717cdc58b9ccb361d286ebbce.woff) format('woff')
+}
+.discordlogo{
+  background-image:url(https://discordapp.com/assets/192cb9459cbc0f9e73e2591b700f1857.svg);
+  width:250px;
+  height:65px;
+  background-size:100%;
+  display:inline-block;
+  background-repeat:no-repeat;
+  background-position:50%;
+  margin-left:-5px;
+  margin-bottom:-22px
+}
+.title{
+  padding-top:80px;
+  font-family: 'Whitney', sans-serif;
+  font-weight:700;
+  color:#fff;
+  font-size:40px
+}
+.background{
+  background-image:url(https://cdn.discordapp.com/attachments/185046628732895232/204497752091000832/bg3.svg);
+  background-size:50%;
+}
+.step{
+  font-family: 'Whitney', sans-serif;
+  font-weight:700;
+  color:#fff;
+  font-size:22px;
+  opacity:0.8
+}
+.link {
+  text-decoration:none;
+  color:#fff;
+  font-family: 'Whitney', sans-serif;
+  font-size:13px;
+  opacity:0.8;
+  margin-right:auto;
+  margin-left:auto;
+  padding:10px 20px;
+  border:2px solid #fff;
+  border-radius:100px;
+}
+
+.link:hover{
+  opacity:1;
+  }
+.instructions{
+  font-family: 'Whitney', sans-serif;
+  font-weight:650;
+  color:rgba(255,255,255,0.65);
+  font-size:16px;
+}
+.highlight{
+  background:rgba(255,255,255,0.1);
+  display:inline-block;
+  opacity:1;
+  border-radius:2px;
+  padding:0 5px;
+  color:#fff
+}
+.highlight:hover{
+  background:rgba(255,255,255,0.2);
+}
+.bottom-wrapper{
+  width:100%;
+  background:#2C2F33;
+  text-align:center;
+  padding-top:30px;
+  padding-bottom:30px;
+}
+.wsite{
+  text-decoration:none;
+  color:#fff;
+  font-family: 'Whitney', sans-serif;
+  font-size:18px;
+  opacity:0.5;
+  transition:all 100ms ease
+}
+.bottom-wrapper:hover .wsite{
+  opacity:0.8
+}
+
+
+/* Sets the background image for the wheel */
+td.the_wheel {
+  background-image: url(./wheel_back.png);
+  background-position: center;
+  background-repeat: none;
+}
+
+/* Do some css reset on selected elements */
+
+.shop-wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+.cost-p {
+  margin: 0;
+}
+
+div.power_controls {
+  margin-right: 70px;
+}
+
+div.html5_logo {
+  margin-left: 70px;
+}
+
+/* Styles for the power selection controls */
+table.power {
+  background-color: #cccccc;
+  cursor: pointer;
+  border: 1px solid #333333;
+}
+
+table.power th {
+  background-color: white;
+  cursor: default;
+}
+
+td.pw1 {
+  background-color: #6fe8f0;
+}
+
+td.pw2 {
+  background-color: #86ef6f;
+}
+
+td.pw3 {
+  background-color: #ef6f6f;
+}
+
+/* Style applied to the spin button once a power has been selected */
+.clickable {
+  cursor: pointer;
+}
+
+/* Other misc styles */
+.margin_bottom {
+  margin-bottom: 5px;
+}
+
+.spin-button {
+  border-radius: 5px;
+  padding: 15px 25px;
+  font-size: 22px;
+  text-decoration: none;
+  margin: 20px;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+}
+
+.spin-button:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+.blue {
+  background-color: #55acee;
+  box-shadow: 0px 5px 0px 0px #3C93D5;
+}
+
+.blue:hover {
+  background-color: #6FC6FF;
+}
+
+.shop-wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+	
+h2,
+p {
+  margin: 30px 0 0;
+  padding: 0;
+}
+
+p {
+  color: #18c495;
+}
+
+.slider {
+  max-width: 1000px;
+  width: 90%;
+  height: 692px;
+  margin: 15px auto;
+  background: #ececec;
+  border-radius: 5px;
+  padding: 20px 0;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  /*h v b s*/
+}
+
+.slick-slider button {
+  display: none!important;
+}
+
+.slick-slide {
+  color: #333;
+  padding: 40px 0;
+  font-size: 1.25em;
+  font-family: "Verdana";
+  text-align: center;
+  pointer-events: none;
+}
+
+.slick-slide .desc {
+  opacity: 0;
+}
+
+.slick-slide .desc > * {
+  transition: all 900ms ease;
+}
+
+.slick-slide .desc h2 {
+  position: relative;
+  left: 50px;
+  line-height: 1;
+}
+
+.slick-slide .desc p {
+  position: relative;
+  top: 50px;
+  opacity: 0;
+}
+
+.slick-slide img {
+  width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
+.slick-dots {
+  text-align: center;
+}
+
+.slick-dots li {
+  display: inline-block;
+  padding: 1px;
+  background: #ccc;
+  margin: 10px 5px;
+  width: 40px;
+  height: 5px;
+}
+
+.slick-dots li.slick-active {
+  background: #18c495;
+}
+
+.slick-dots button {
+  display: none;
+}
+
+.slick-slide {
+  opacity: 0.2;
+  transition: all 300ms ease;
+}
+
+.slick-current {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.slick-current .desc {
+  opacity: 1;
+}
+
+.slick-current .desc h2 {
+  left: 0;
+}
+
+.slick-current .desc p {
+  top: 0;
+  opacity: 1;
+}
+
+.add-to-cart-btn {
+  border-radius: 30px;
+  padding: 10px 20px;
+  border: 4px solid #18c495;
+  text-decoration: none;
+  color: #18c495;
+  font-size: .6em;
+  text-transform: uppercase;
+  display: block;
+  margin: 30px auto 0;
+  max-width: 100px;
+  width: 100%;
+  font-weight: bold;
+  pointer-events: initial;
+}
+
+
+#countdown-banner {display: flex; align-items: center; justify-content: center; background-color: #e31837; color: #fff; padding: 15px 10px}
+#countdown-banner .sale-name { font-size: 18px; font-weight: 600; padding-right: 30px; border-right: solid 1px; margin-right: 30px}
+#countdown-banner .sale-ends {font-size: 14px; margin-right: 10px}
+#countdown-timer {display: inherit}
+#countdown-timer .sep {margin: 0 3px}
+#countdown-timer .unit {text-align: center; min-width: 22px}
+#countdown-timer .unit .digits {font-size: 18px; font-weight: 600}
+#countdown-timer .unit .label {font-size: 10px; margin-top: 5px}

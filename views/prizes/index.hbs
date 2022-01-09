@@ -1,0 +1,70 @@
+<div class="shop-wrapper">
+    <section class="slider">
+    <div>
+        <img src="https://i.ibb.co/gFbrZHQ/cs-450-154-220.png">
+        <div class="desc">
+        <h2>3x Gaming PC's</h2>
+        <p class="cost-p"></p>
+        </div>
+    </div>
+
+    <div>
+        <img src="https://i.ibb.co/LpCTVkG/playstation-5-digital-edition-with-dualsense-front-product-shot-01-ps5-en-30jul20.png">
+        <div class="desc">
+        <h2>3x PS5's</h2>
+        </div>
+    </div>
+    <div>
+        <img src="https://i.ibb.co/TbCPCsg/3WzSDk7.png">
+        <div class="desc">
+        <h2>10x Discord Nitro</h2>
+        </div>
+    </div>
+
+    <div>
+        <img src="https://i.ibb.co/6mhXLhZ/output-onlinepngtools-3.png">
+        <div class="desc">
+        <h2>2x Razer Keyboard</h2>
+        </div>
+    </div>
+
+    <div>
+        <img src="https://i.ibb.co/GPvKYq4/Stockx-logo.png">
+        <div class="desc">
+        <h2>2x $300 StockX GiftCard</h2>
+        <p class="cost-p"></p>
+        </div>
+    </div>
+    </section>
+</div>
+
+
+<script>
+    function createSlick(){  
+
+	$(".slider").not('.slick-initialized').slick({
+		centerMode: true,
+	    autoplay: true,
+	    dots: true,
+	
+  		slidesToShow: 3,
+	    responsive: [{ 
+	        breakpoint: 768,
+	        settings: {
+	            dots: false,
+	            arrows: false,
+	            infinite: false,
+	            slidesToShow: 1,
+	            slidesToScroll: 1
+	        } 
+	    }]
+	});	
+
+}
+
+createSlick();
+
+//Will not throw error, even if called multiple times.
+$(window).on( 'resize', createSlick );
+
+</script>

@@ -1,0 +1,144 @@
+<h1>Spin for a chance of winning more raffle tickets!</h1>
+  {{!-- <a href="#" onClick="startSpin(); return false;">Spin</a><br />
+  <a href="#" onClick="resetWheel(); return false;">Play Again</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(reset) --}}
+  {{!-- {{#if user.tickets.length }}
+    <a href="#" onClick="startSpin(); return false;">Spin</a><br />
+  {{else}}
+    <p style="{color: white}" align="center">You have no tickets to spin :(</p>
+  {{/if}} --}}
+{{#if tickets }}
+    <button href="#" onClick="startSpin(); return false;" class="spin-button blue">Spin for 1 Ticket</button>
+    <canvas id="canvas" width="434" height="434">
+        <p style="{color: white}" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
+    </canvas>
+{{else}}
+    <p style="{color: white}" align="center">You have no tickets to spin :(</p>
+{{/if}}
+<form action="/handle-spin" id="finishSpin" method="POST" class="col s12" style="display: none;">
+    <input type="text" id="winnings" name="winnings">
+    <label for="winnings">Username</label>
+    <input onclick="submitAction()" id="submit_value" type="button" name="submit_value" value="">
+</form>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+<script>  
+// Create new wheel object specifying the parameters at creation time.
+var theWheel = new Winwheel({
+  numSegments: 15, // Specify number of segments.
+  outerRadius: 212, // Set outer radius so wheel fits inside the background.
+  textFontSize: 28, // Set font size as desired.
+  // Define segments including colour and text.
+  segments: [
+    { fillStyle: "#00FF00", text: "+1 Tickets" },
+    { fillStyle: "#e7706f", text: "0 Tickets" },
+    { fillStyle: "#e7706f", text: "0 Tickets" },
+    { fillStyle: "#e7706f", text: "0 Tickets" },
+    { fillStyle: "#00FF00", text: "+1 Tickets" },
+    { fillStyle: "#e7706f", text: "0 Tickets" },
+    { fillStyle: "#e7706f", text: "0 Tickets" },
+    { fillStyle: "#00FF00", text: "+1 Tickets" },
+    { fillStyle: "#e7706f", text: "0 Tickets" },
+    { fillStyle: "#00FF00", text: "+5 Tickets" },
+    { fillStyle: "#e7706f", text: "0 Tickets" },
+    { fillStyle: "#e7706f", text: "0 Tickets" },
+    { fillStyle: "#00FF00", text: "+1 Tickets" },
+    { fillStyle: "#e7706f", text: "0 Tickets" },
+    { fillStyle: "#FFD700", text: "+10 Tickets" }
+  ],
+  // Specify the animation to use.
+  animation: {
+    type: "spinToStop",
+    duration: 5, // Duration in seconds.
+    spins: 8, // Number of complete spins.
+    callbackFinished: "alertPrize()"
+  }
+});
+
+// Vars used by the code in this page to do power controls.
+var wheelPower = 0;
+var wheelSpinning = false;
+
+// -------------------------------------------------------
+// Function to handle the onClick on the power buttons.
+// -------------------------------------------------------
+function powerSelected(powerLevel) {
+  // Ensure that power can't be changed while wheel is spinning.
+  if (wheelSpinning == false) {
+    // Reset all to grey incase this is not the first time the user has selected the power.
+    document.getElementById("pw1").className = "";
+    document.getElementById("pw2").className = "";
+    document.getElementById("pw3").className = "";
+
+    // Now light up all cells below-and-including the one selected by changing the class.
+    if (powerLevel >= 1) {
+      document.getElementById("pw1").className = "pw1";
+    }
+
+    if (powerLevel >= 2) {
+      document.getElementById("pw2").className = "pw2";
+    }
+
+    if (powerLevel >= 3) {
+      document.getElementById("pw3").className = "pw3";
+    }
+
+    // Set wheelPower var used when spin button is clicked.
+    wheelPower = powerLevel;
+
+    // Light up the spin button by changing it's source image and adding a clickable class to it.
+    document.getElementById("spin_button").src = "spin_on.png";
+    document.getElementById("spin_button").className = "clickable";
+  }
+}
+
+// -------------------------------------------------------
+// Click handler for spin button.
+// -------------------------------------------------------
+function startSpin() {
+  // Ensure that spinning can't be clicked again while already running.
+  if (wheelSpinning == false) {
+    // Disable the spin button so can't click again while wheel is spinning.
+    //document.getElementById("spin_button").src = "spin_off.png";
+    //document.getElementById("spin_button").className = "";
+
+    // Begin the spin animation by calling startAnimation on the wheel object.
+    theWheel.startAnimation();
+
+    // Set to true so that power can't be changed and spin button re-enabled during
+    // the current animation. The user will have to reset before spinning again.
+    wheelSpinning = true;
+  }
+}
+
+// -------------------------------------------------------
+// Function for reset button.
+// -------------------------------------------------------
+function resetWheel() {
+  theWheel.stopAnimation(false); // Stop the animation, false as param so does not call callback function.
+  theWheel.rotationAngle = 0; // Re-set the wheel angle to 0 degrees.
+  theWheel.draw(); // Call draw to render changes to the wheel.
+
+  document.getElementById("pw1").className = ""; // Remove all colours from the power level indicators.
+  document.getElementById("pw2").className = "";
+  document.getElementById("pw3").className = "";
+
+  wheelSpinning = false; // Reset to false to power buttons and spin can be clicked again.
+}
+
+// -------------------------------------------------------
+// Called when the spin animation has finished by the callback feature of the wheel because I specified callback in the parameters.
+// -------------------------------------------------------
+function alertPrize() {
+  // Get the segment indicated by the pointer on the wheel background which is at 0 degrees.
+  var winningSegment = theWheel.getIndicatedSegment();
+
+  // Do basic alert of the segment text. You would probably want to do something more interesting with this information.
+  alert("You have won " + winningSegment.text);
+  const spinButton = document.getElementById("finishSpin");
+  document.getElementById("winnings").value = winningSegment.text;
+  spinButton.submit();
+}
+
+
+</script> 
